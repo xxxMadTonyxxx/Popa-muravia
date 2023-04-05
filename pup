@@ -1,0 +1,44 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	std::cout << "Введите значения для подсчёта медиан";
+	double a, b, c;
+	std::cin >> a >> b >> c;
+	if (a <= 0 || b <= 0 || c <= 0)
+	{
+		std::cout << "Ошибка: Значение меньше либо равно нулю" << "\n";
+		return 0;
+	}
+
+	else {
+		if (a >= b + c)
+		{
+			std::cout << "Ошибка: Сумма сторон b и c меньше либо равно a" << "\n";
+			return 0;
+		}
+		else {
+			if (b >= a + c)
+			{
+				std::cout << "Ошибка: Сумма сторон а и c меньше либо равно b" << "\n";
+				return 0;
+			}
+			else {
+				if (c >= b + a) {
+					std::cout << "Ошибка: Сумма сторон b и a меньше либо равно c" << "\n";
+					return 0;
+				}
+				else {
+					double La, Lb, Lc;
+					La = (2 * c + 2 * b - 2 * a);
+					Lb = (2 * c + 2 * a - 2 * b);
+					Lc = (2 * a + 2 * b - c * 2);
+					std::cout << "la = " << La << "\n" << "lb = " << Lb << "\n" << "lc = " << Lc << "\n";
+				}
+
+			}
+		}
+	}
+}
